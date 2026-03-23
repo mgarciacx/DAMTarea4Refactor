@@ -1,4 +1,12 @@
 package cuentas;
+
+/**
+ * Clase CCuenta
+ * Crea el objeto cuenta con un titular, númerode cuenta, saldo actual y tipo de interés.
+ * Los métodos permiten consulta el saldo, retirar e ingresar dinero.
+ * 
+ */
+
 public class CCuenta {
 
 
@@ -18,18 +26,30 @@ public class CCuenta {
         setSaldo(sal);
     }
 
+    /**
+     * Devuelve el saldo de la cuenta
+     * @return saldo
+     */
     public double estado()
     {
         return getSaldo();
     }
-
+/**
+ * Permite ingresar dinero en la cuenta
+ * @param cantidad
+ * @throws Exception 
+ */
     public void ingresar(double cantidad) throws Exception
     {
         if (cantidad<0)
             throw new Exception("No se puede ingresar una cantidad negativa");
         setSaldo(getSaldo() + cantidad);
     }
-
+/**
+ * Permite retirar dinero de la cuenta
+ * @param cantidad
+ * @throws Exception
+ */
     public void retirar(double cantidad) throws Exception
     {
         if (cantidad <= 0)
